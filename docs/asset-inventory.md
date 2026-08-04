@@ -51,3 +51,16 @@ The following values must not be stored as DAM images:
 * Apply URLs
 
 These values will come from structured content or published APIs.
+
+## Confirmed DAM Locations
+
+| Asset category | DAM location |
+|---|---|
+| Shared brand assets | `/content/dam/rbc-eds-demo/shared/brand` |
+| Shared documents | `/content/dam/rbc-eds-demo/shared/documents` |
+| Card product images | `/content/dam/rbc-eds-demo/cards/product-images` |
+| Card promotional assets | `/content/dam/rbc-eds-demo/cards/promotional` |
+| Card documents | `/content/dam/rbc-eds-demo/cards/documents` |
+| GIC benefit assets | `/content/dam/rbc-eds-demo/gic/benefits` |
+| GIC tool imagery | `/content/dam/rbc-eds-demo/gic/tools` |
+| GIC documents | `/content/dam/rbc-eds-demo/gic/documents` |

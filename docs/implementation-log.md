@@ -1,5 +1,29 @@
 # RBC AEM Assets Implementation Log
 
+## 2026-08-04 — DAM Foundation
+
+### Objective
+
+Bootstrap the RBC DAM namespace, author groups, folder hierarchy, and scoped ACLs using RepoInit.
+
+### Changes Completed
+
+* Registered `rbc` namespace (`https://www.rbc.com/aem/metadata/1.0`) in `config` tier
+* Created groups `rbc-dam-authors`, `rbc-dam-reviewers`, `rbc-dam-admins` and added all to `dam-users`
+* Created eight DAM folders under `/content/dam/rbc-eds-demo` (shared, cards, gic subtrees)
+* Applied scoped ACLs: authors (read/write/version), reviewers (+ replicate), admins (+ ACL management)
+
+### Files Changed
+
+* `ui.config/src/main/content/jcr_root/apps/rbc-aem-assets/osgiconfig/config/org.apache.sling.jcr.repoinit.RepositoryInitializer~rbc-aem-assets.cfg.json` — added namespace registration
+* `ui.config/src/main/content/jcr_root/apps/rbc-aem-assets/osgiconfig/config.author/org.apache.sling.jcr.repoinit.RepositoryInitializer~rbc-aem-assets-dam.cfg.json` — new: groups, folders, ACLs
+
+### Validation
+
+`mvn clean install -pl ui.config` — BUILD SUCCESS (filevault package validation passed)
+
+---
+
 ## Entry Template
 
 ### Date
@@ -102,3 +126,48 @@ A version-controlled repository is available for DAM configuration, workflows, p
 ### Next Step
 
 Implement RepoInit groups and permissions.
+
+
+## 2026-08-04 — RBC DAM Foundation
+
+### Objective
+
+Establish the initial folder, namespace, security-group and permission foundation
+for the RBC AEM Assets implementation.
+
+### Changes Completed
+
+- Registered the `rbc` metadata namespace.
+- Created the `/content/dam/rbc-eds-demo` folder hierarchy.
+- Created the following security groups:
+  - `rbc-dam-authors`
+  - `rbc-dam-reviewers`
+  - `rbc-dam-admins`
+- Added the custom groups to `dam-users`.
+- Configured scoped permissions through RepoInit.
+- Deployed the configuration to the local AEM Author environment.
+
+### Files Changed
+
+- `ui.config/.../RepositoryInitializer~rbc-namespaces.cfg.json`
+- `ui.config/.../RepositoryInitializer~rbc-dam-foundation.config`
+- `docs/implementation-log.md`
+- `docs/aem-assets-implementation-guide.md`
+- `docs/architecture-decisions.md`
+
+### Validation
+
+- Maven build completed successfully.
+- The aggregate package installed successfully on local AEM Author.
+- The RBC folder hierarchy appeared in the Assets console.
+- The custom security groups appeared in User Administration.
+- Group membership and folder permissions were verified.
+
+### Client-Relevant Outcome
+
+The project now has a repeatable and version-controlled DAM foundation for
+organizing and governing Cards, GIC and shared RBC assets.
+
+### Next Step
+
+Create and apply the RBC asset metadata schema.

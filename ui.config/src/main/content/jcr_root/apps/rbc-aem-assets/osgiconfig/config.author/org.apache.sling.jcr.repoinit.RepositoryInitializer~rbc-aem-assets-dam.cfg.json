@@ -1,0 +1,9 @@
+{
+    "scripts": [
+        "create group rbc-dam-authors\ncreate group rbc-dam-reviewers\ncreate group rbc-dam-admins\nadd rbc-dam-authors to group dam-users\nadd rbc-dam-reviewers to group dam-users\nadd rbc-dam-admins to group dam-users",
+        "create path (sling:OrderedFolder) /content/dam/rbc-eds-demo/shared/brand\ncreate path (sling:OrderedFolder) /content/dam/rbc-eds-demo/shared/documents\ncreate path (sling:OrderedFolder) /content/dam/rbc-eds-demo/cards/product-images\ncreate path (sling:OrderedFolder) /content/dam/rbc-eds-demo/cards/promotional\ncreate path (sling:OrderedFolder) /content/dam/rbc-eds-demo/cards/documents\ncreate path (sling:OrderedFolder) /content/dam/rbc-eds-demo/gic/benefits\ncreate path (sling:OrderedFolder) /content/dam/rbc-eds-demo/gic/tools\ncreate path (sling:OrderedFolder) /content/dam/rbc-eds-demo/gic/documents",
+        "set ACL for rbc-dam-authors\n  allow jcr:read,jcr:write,jcr:versionManagement on /content/dam/rbc-eds-demo\nend",
+        "set ACL for rbc-dam-reviewers\n  allow jcr:read,jcr:write,jcr:versionManagement,crx:replicate on /content/dam/rbc-eds-demo\nend",
+        "set ACL for rbc-dam-admins\n  allow jcr:read,jcr:write,jcr:versionManagement,crx:replicate,jcr:readAccessControl,jcr:modifyAccessControl on /content/dam/rbc-eds-demo\nend"
+    ]
+}

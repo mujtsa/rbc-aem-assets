@@ -95,3 +95,54 @@ The following require an AEM as a Cloud Service environment:
 * Cloud Asset Compute processing
 * Cloud Manager deployment
 * Production CDN and Dispatcher validation
+
+## DAM Foundation
+
+The initial RBC DAM foundation is deployed through version-controlled RepoInit
+configuration.
+
+The implementation includes:
+
+- RBC-specific DAM folder hierarchy
+- Custom RBC metadata namespace
+- Author, reviewer and administrator groups
+- Scoped folder permissions
+- Standard AEM Assets group inheritance
+- Repeatable deployment through the Maven project
+
+
+## DAM Folder Structure
+
+/content/dam/rbc-eds-demo
+├── shared
+│   ├── brand
+│   └── documents
+├── cards
+│   ├── product-images
+│   ├── promotional
+│   └── documents
+└── gic
+    ├── benefits
+    ├── tools
+    └── documents
+
+    
+### Security model
+
+## DAM Security Model
+
+| Group | Responsibility |
+|---|---|
+| `rbc-dam-authors` | Upload assets and maintain asset metadata |
+| `rbc-dam-reviewers` | Review, approve and publish assets |
+| `rbc-dam-admins` | Administer the RBC DAM structure and permissions |
+
+The custom groups inherit the standard AEM Assets capabilities provided by
+`dam-users`. Additional permissions are restricted to
+`/content/dam/rbc-eds-demo`.
+
+## Deployment Model
+
+The DAM foundation is deployed to AEM Author through the AEM Maven aggregate package. Business asset binaries are not stored in the Maven repository.
+
+Assets will be uploaded and governed through AEM Author and published to AEM Publish through the approved publication process.
