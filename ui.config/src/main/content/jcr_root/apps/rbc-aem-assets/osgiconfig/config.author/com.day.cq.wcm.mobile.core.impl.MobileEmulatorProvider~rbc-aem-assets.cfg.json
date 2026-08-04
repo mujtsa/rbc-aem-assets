@@ -1,0 +1,6 @@
+{
+  "mobile.resourceTypes": [
+    "rbc-aem-assets/components/page"
+  ],
+  "README": "Indicate which page resource types should display the mobile emulators."
+}

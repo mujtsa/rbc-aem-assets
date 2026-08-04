@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/rbc-aem-assets/clientlibs"/>
+    <filter root="/apps/rbc-aem-assets/components"/>
+    <filter root="/apps/rbc-aem-assets/i18n"/>
+</workspaceFilter>

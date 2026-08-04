@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/rbc-aem-assets",
+        "create path (nt:unstructured) /content/dam/rbc-aem-assets/jcr:content",
+        "set properties on /content/dam/rbc-aem-assets/jcr:content\n  set cq:conf{String} to /conf/rbc-aem-assets\n  set jcr:title{String} to \"RBC AEM Assets\"\nend"
+    ]
+}

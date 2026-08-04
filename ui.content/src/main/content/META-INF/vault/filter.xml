@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/rbc-aem-assets" mode="merge"/>
+    <filter root="/content/rbc-aem-assets" mode="merge"/>
+    <filter root="/content/dam/rbc-aem-assets" mode="merge">
+        <exclude pattern="/content/dam/rbc-aem-assets(/.*)?"/>
+        <include pattern="/content/dam/rbc-aem-assets/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/rbc-aem-assets/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/rbc-aem-assets" mode="merge"/>
+</workspaceFilter>
